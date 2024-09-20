@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validación de formularios</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="wrapper">
+      <div class="header">
+        <nav class="header__logo header__section">
+          <img src="./assets/logo.png" alt="" />
+        </nav>
+        <nav class="header__navigation header__section">
+          <ul>
+            <li>Inicio</li>
+            <li>Pedidos</li>
+            <li>Despachos</li>
+            <li>Marketing</li>
+            <li>Diseño</li>
+          </ul>
+        </nav>
+        <nav class="header__account header__section">
+          <div>
+            <img src="./assets/stock.jpg" alt="" />
+            <li>Mi cuenta</li>
+            <svg
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              fill="black"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M1 1L7 7L13 1" stroke="black" style="stroke: black" />
+            </svg>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="actualizacion__container">
+        <div class="actualizacion__container__header">
+          <h2>Actualización de datos personales</h2>
+          <p>
+            Es fundamental que su información personal esté actualizada para
+            garantizar un servicio eficiente y personalizado. A continuación,
+            podrá modificar su nombre, dirección de correo electrónico,
+            ubicación y otros datos relevantes.
+          </p>
+        </div>
+        <div class="actualizacion__container__form__wrapper">
+          <form id="formActualizacion" novalidate>
+            <!-- GRUPO -->
+            <fieldset class="input__field__group">
+              <div class="input__group">
+                <label for="firstName" class="label"
+                  >Nombre:<span class="required__field">*</span></label
+                >
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  class="input"
+                  maxlength="20"
+                  required
+                  autocomplete="name"
+                  minlength="3"
+                />
+                <span class="error" id="errorNombre"
+                  >El nombre es requerido</span
+                >
+              </div>
+              <div class="input__group">
+                <label for="surName" class="label"
+                  >Apellido:<span class="required__field">*</span></label
+                >
+                <input
+                  type="text"
+                  name="surName"
+                  class="input"
+                  id="surName"
+                  maxlength="20"
+                  required
+                  autocomplete="family-name"
+                />
+                <span class="error" id="errorApellido"
+                  >El apellido es requerido</span
+                >
+              </div>
+            </fieldset>
+            <!-- GRUPO -->
+            <fieldset class="input__field__group">
+              <div class="input__group input__group__flex">
+                <div class="input__group__double">
+                  <label for="tipoDocumento" class="label"
+                    >Tipo de documento:
+                    <span class="required__field">*</span>
+                  </label>
+
+                  <select
+                    name="tipoDocumento"
+                    id="tipoDocumento"
+                    class="input"
+                    required
+                  >
+                    <option value="CedulaCiudadania">C.C</option>
+                    <option value="CedulaExtrangeria">C.E</option>
+                    <option value="PermisoTemporal">Permiso temporal</option>
+                  </select>
+                </div>
+                <div class="input__group__double">
+                  <label for="numeroDocumento" class="label"
+                    >Número:<span class="required__field">*</span></label
+                  >
+                  <input type="number" name="numeroDocumento" class="input" />
+                </div>
+              </div>
+              <!-- EDAD -->
+              <div class="input__group">
+                <label for="edad" class="label"
+                  >Edad:<span class="required__field">*</span></label
+                >
+                <input
+                  type="number"
+                  name="edad"
+                  id="edad"
+                  class="input"
+                  min="18"
+                  max="100"
+                  required
+                  autocomplete="off"
+                />
+                <span class="error" id="errorEdad">La edad es requerida</span>
+              </div>
+            </fieldset>
+            <fieldset class="input__field__group">
+              <div class="input__group">
+                <label for="email" class="label">
+                  Correo electrónico:
+                  <span class="required__field">*</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="input"
+                  autocomplete="email"
+                />
+                <span class="error" id="errorEmail">El email es requerido</span>
+              </div>
+            </fieldset>
+            <fieldset class="input__field__group">
+              <div class="input__group">
+                <label for="actividad" class="label"
+                  >Actividad Laboral:<span class="required__field"
+                    >*</span
+                  ></label
+                >
+                <select name="" id="" class="input">
+                  <option value="tecnologia">Tecnología</option>
+                  <option value="programacion">Programación</option>
+                  <option value="InteligenciaArtificial">
+                    Inteligencia Artificial
+                  </option>
+                  <option value="Automatizacion">Automatización</option>
+                  <option value="AdminSistemas">
+                    Admin. Sistemas informáticos
+                  </option>
+                  <option value="Educacion">Educación</option>
+                </select>
+                <span class="error" id="errorActividad"
+                  >La actividad laboral es requerida</span
+                >
+              </div>
+              <div class="input__group">
+                <label for="formacionAcademica" class="label">
+                  Nivel de formación academica:
+                  <span class="required__field">*</span>
+                </label>
+                <select name="" id="" class="input">
+                  <option value="bachillerato">Bachillerato</option>
+                  <option value="tecnologo">Tecnólogo</option>
+                  <option value="pregrado">Pregado</option>
+                  <option value="profesional">Profesional</option>
+                </select>
+                <span class="error" id="errorFormacion"
+                  >La formación es requerida</span
+                >
+              </div>
+            </fieldset>
+            <fieldset class="input__field__group input__field__publicidad">
+              <section>
+                <div class="form__section__header">
+                  <h3 class="form__section__title">
+                    ¿Desea recibir publicidad sobre nosotros?
+                  </h3>
+                </div>
+                <div class="form__section__checkbox">
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="ofertas"
+                      id="ofertas"
+                      checked
+                    />
+                    <label for="ofertas">Ofertas</label>
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="novedades"
+                      id="novedades"
+                      checked
+                    />
+                    <label for="novedades">Novedades</label>
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="promociones"
+                      id="promociones"
+                    />
+                    <label for="promociones">Promociones anuales</label>
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="lanzamientos"
+                      id="lanzamientos"
+                    />
+                    <label for="lanzamientos">Nuevos lanzamientos</label>
+                  </div>
+                </div>
+              </section>
+            </fieldset>
+            <fieldset class="input__field__group input__field__publicidad">
+              <section>
+                <div class="form__section__header">
+                  <h3 class="form__section__title">Términos y condiciones</h3>
+                </div>
+                <div class="form__section__checkbox">
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="terminos"
+                      id="terminos"
+                      required
+                    />
+                    <label for="terminos"
+                      >¿Estás de acuerdo con que tus datos personales sean
+                      tratados según lo expuesto en nuestras políticas de
+                      privacidad?</label
+                    >
+                    <span class="error" id="errorTerminos"
+                      >Terminos y condiciones son necesarios</span
+                    >
+                  </div>
+                </div>
+              </section>
+            </fieldset>
+          </form>
+        </div>
+        <div class="action__buttons">
+          <button
+            type="reset"
+            class="btn btn--secondary"
+            form="formActualizacion"
+          >
+            Limpiar
+          </button>
+          <button
+            type="submit"
+            class="btn"
+            id="actualizarBtn"
+            form="formActualizacion"
+          >
+            Actualizar información
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
