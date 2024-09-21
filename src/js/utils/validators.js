@@ -107,10 +107,8 @@ function isFormValid() {
     emailVerification() &&
     termsValidation();
   if (functionsValidation) {
-    console.log('LA CONDICIÓN SE EVALUÓ TRUE');
     return true;
   } else {
-    console.log('LA CONDICIÓN SE EVALUÓ FALSE');
     return false;
   }
 }
