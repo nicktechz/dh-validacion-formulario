@@ -12,6 +12,9 @@
 
   background-color: var(--color-bg-gray);
 }
+body {
+  position: relative;
+}
 /* HEADER */
 .header {
   max-width: 1140px;
