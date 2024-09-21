@@ -1,8 +1,8 @@
 import { showError, hideError } from './showError.js';
 import { regexValidation } from './regexValidator.js';
+import { firstName, surName, idNumber, age, email } from './DOM.js';
 
 function firstNameValidation() {
-  const firstName = document.getElementById('firstName');
   if (firstName.value === '') {
     showError(firstName, 'Este campo es requerido');
   } else if (firstName.value.length > 0 && firstName.value.length <= 3) {
@@ -12,7 +12,6 @@ function firstNameValidation() {
   }
 }
 function surNameValidation() {
-  const surName = document.getElementById('surName');
   if (surName.value === '') {
     showError(surName, 'Este campo es requerido');
   } else if (surName.value.length > 0 && surName.value.length <= 3) {
@@ -23,7 +22,6 @@ function surNameValidation() {
 }
 
 function identificationNumberValidation() {
-  const idNumber = document.getElementById('idNumber');
   if (idNumber.value === '') {
     showError(idNumber, 'Este campo es requerido');
   } else if (idNumber.value.length > 0 && idNumber.value.length < 10) {
@@ -42,7 +40,6 @@ function identificationNumberValidation() {
 }
 
 function ageVerification() {
-  const age = document.getElementById('age');
   if (age.value > 0 && age.value < 18) {
     showError(
       age,
@@ -58,7 +55,6 @@ function ageVerification() {
 }
 
 function emailVerification() {
-  const email = document.getElementById('email');
   const isStringValid = regexValidation(
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     email.value
@@ -76,7 +72,6 @@ function emailVerification() {
 }
 
 function termsValidation() {
-  const terms = document.getElementById('terms');
   if (!terms.checked) {
     showError(terms, 'Debes aceptar los términos y condiciones');
   } else {
