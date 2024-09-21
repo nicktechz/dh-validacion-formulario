@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Validación de formularios</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="fonts.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/fonts.css" />
+    <link rel="stylesheet" href="./src/css/styles.css" />
 
-    <script src="script.js" defer></script>
+    <script type="module" src="./src/js/script.js" defer></script>
   </head>
   <body>
     <header class="wrapper">
@@ -72,9 +72,7 @@
                   autocomplete="name"
                   minlength="3"
                 />
-                <span class="error" id="errorfirstName"
-                  >El nombre es requerido</span
-                >
+                <span class="error" id="errorfirstName"></span>
               </div>
               <div class="input__group">
                 <label for="surName" class="label"
@@ -89,9 +87,7 @@
                   required
                   autocomplete="family-name"
                 />
-                <span class="error" id="errorsurName"
-                  >El apellido es requerido</span
-                >
+                <span class="error" id="errorsurName"></span>
               </div>
             </fieldset>
             <!-- GRUPO -->
@@ -118,7 +114,13 @@
                   <label for="numeroDocumento" class="label"
                     >Número:<span class="required__field">*</span></label
                   >
-                  <input type="number" name="numeroDocumento" class="input" />
+                  <input
+                    type="number"
+                    name="numeroDocumento"
+                    class="input"
+                    id="idNumber"
+                  />
+                  <span class="error" id="erroridNumber"></span>
                 </div>
               </div>
               <!-- EDAD -->
@@ -129,14 +131,14 @@
                 <input
                   type="number"
                   name="edad"
-                  id="edad"
+                  id="age"
                   class="input"
                   min="18"
                   max="100"
                   required
                   autocomplete="off"
                 />
-                <span class="error" id="errorEdad">La edad es requerida</span>
+                <span class="error" id="errorage"></span>
               </div>
             </fieldset>
             <fieldset class="input__field__group">
@@ -152,7 +154,7 @@
                   class="input"
                   autocomplete="email"
                 />
-                <span class="error" id="errorEmail">El email es requerido</span>
+                <span class="error" id="erroremail"></span>
               </div>
             </fieldset>
             <fieldset class="input__field__group">
@@ -257,6 +259,7 @@
                       tratados según lo expuesto en nuestras políticas de
                       privacidad?</label
                     >
+
                     <span class="error" id="errorTerminos"
                       >Terminos y condiciones son necesarios</span
                     >
