@@ -4,6 +4,7 @@ import {
   identificationNumberValidation,
   ageVerification,
   emailVerification,
+  termsValidation,
 } from './utils/validators.js';
 
 // LLAMAMOS LOS ELEMENTOS DEL DOM QUE SON NECESARIOS
@@ -18,4 +19,5 @@ function formValidation() {
   identificationNumberValidation();
   ageVerification();
   emailVerification();
+  termsValidation();
 }

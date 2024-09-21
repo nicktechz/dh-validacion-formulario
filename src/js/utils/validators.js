@@ -73,10 +73,20 @@ function emailVerification() {
   }
 }
 
+function termsValidation() {
+  const terms = document.getElementById('terms');
+  if (!terms.checked) {
+    showError(terms, 'Debes aceptar los términos y condiciones');
+  } else {
+    hideError(terms);
+  }
+}
+
 export {
   firstNameValidation,
   surNameValidation,
   identificationNumberValidation,
   ageVerification,
   emailVerification,
+  termsValidation,
 };
