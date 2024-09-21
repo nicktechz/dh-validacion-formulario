@@ -50,6 +50,8 @@ function ageVerification() {
     );
   } else if (age.value === '') {
     showError(age, 'Este campo es requerido');
+  } else if (age.value >= 120) {
+    showError(age, 'Ingresa una edad válida');
   } else {
     hideError(age);
   }
